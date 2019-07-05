@@ -47,7 +47,8 @@ console.log(latitudes);
 //console.log(calculateTrapezoidArea(52.96, 11, 53.96));
 
 const findLat = (lat) => {
-  const section = latitudes.slice(0, Math.floor(Math.abs(lat))).reverse();
+  const section = latitudes.slice(0, Math.floor(Math.abs(lat))+1).reverse();
+  console.log(section);
   if (lat > 0) {
     return section.find(e => e < lat);
   } else {
@@ -55,8 +56,9 @@ const findLat = (lat) => {
   }
 }
 
-console.log(findLat(37.1));
-console.log(findLat(-42.045));
+//console.log(findLat(37.1));
+//console.log(findLat(-42.045));
+console.log(findLat(-31.9664838));
 
 const transformRecord = ({ city, country, accessible, unisex, changing_table, latitude, longitude }) => {
 }
